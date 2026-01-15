@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrixVert - Marché Agricole Ivoirien</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="https://img.icons8.com/color/48/000000/agriculture.png" type="image/x-icon">
+</head>
+<body>
+    <!-- Header avec logo et navigation -->
+    <header>
+        <div class="container header-container">
+            <div class="logo-container">
+                <div class="logo">
+                    <i class="fas fa-seedling"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>PrixVert</h1>
+                    <p>Marché Agricole Ivoirien</p>
+                </div>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="#accueil">Accueil</a></li>
+                    <li><a href="#prix">Prix du marché</a></li>
+                    <li><a href="#comparer">Comparer les prix</a></li>
+                    <li><a href="#apropos">À propos</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Section Hero -->
+    <section class="hero" id="accueil">
+        <div class="container">
+            <h2>Lutter contre la spéculation des produits agricoles</h2>
+            <p>Consultez et comparez les prix des produits agricoles sur les marchés ivoiriens en temps réel. Transparence des prix pour protéger les producteurs et les consommateurs.</p>
+            <a href="#prix" class="cta-button">Consulter les prix</a>
+        </div>
+    </section>
+
+    <!-- Section principale -->
+    <main class="container">
+        <!-- Section des filtres -->
+        <section id="prix">
+            <h2 class="section-title">Prix des produits agricoles</h2>
+            
+            <div class="filters">
+                <div class="filter-container">
+                    <div class="filter-group">
+                        <label for="productSelect">Produit</label>
+                        <select id="productSelect">
+                            <option value="all">Tous les produits</option>
+                            <option value="cacao">Cacao</option>
+                            <option value="cafe">Café</option>
+                            <option value="banane">Banane</option>
+                            <option value="ananas">Ananas</option>
+                            <option value="manioc">Manioc</option>
+                            <option value="riz">Riz</option>
+                            <option value="mais">Maïs</option>
+                            <option value="igname">Igname</option>
+                            <option value="tomate">Tomate</option>
+                            <option value="piment">Piment</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="marketSelect">Marché</label>
+                        <select id="marketSelect">
+                            <option value="all">Tous les marchés</option>
+                            <option value="abidjan">Abidjan</option>
+                            <option value="yamoussoukro">Yamoussoukro</option>
+                            <option value="bouake">Bouaké</option>
+                            <option value="sanpedro">San Pedro</option>
+                            <option value="daloa">Daloa</option>
+                            <option value="man">Man</option>
+                            <option value="korhogo">Korhogo</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="dateRange">Date</label>
+                        <input type="date" id="dateRange" value="2023-06-15">
+                    </div>
+                    
+                    <div class="filter-buttons">
+                        <button class="filter-btn" id="applyFilter">Appliquer les filtres</button>
+                        <button class="filter-btn reset" id="resetFilter">Réinitialiser</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Grille des produits -->
+            <div class="products-grid" id="productsGrid">
+                <!-- Les produits seront générés dynamiquement par JavaScript -->
+            </div>
+        </section>
+        
+        <!-- Section de comparaison -->
+        <section id="comparer">
+            <h2 class="section-title">Comparer les prix</h2>
+            
+            <div class="comparison-section">
+                <div class="comparison-container">
+                    <div class="comparison-controls">
+                        <div class="comparison-select">
+                            <label for="compareProduct">Choisir un produit</label>
+                            <select id="compareProduct">
+                                <option value="cacao">Cacao</option>
+                                <option value="cafe">Café</option>
+                                <option value="banane">Banane</option>
+                                <option value="ananas">Ananas</option>
+                                <option value="riz">Riz</option>
+                            </select>
+                        </div>
+                        
+                        <div class="comparison-select">
+                            <label for="compareMarket1">Premier marché</label>
+                            <select id="compareMarket1">
+                                <option value="abidjan">Abidjan</option>
+                                <option value="yamoussoukro">Yamoussoukro</option>
+                                <option value="bouake">Bouaké</option>
+                                <option value="sanpedro">San Pedro</option>
+                            </select>
+                        </div>
+                        
+                        <div class="comparison-select">
+                            <label for="compareMarket2">Deuxième marché</label>
+                            <select id="compareMarket2">
+                                <option value="daloa">Daloa</option>
+                                <option value="yamoussoukro">Yamoussoukro</option>
+                                <option value="bouake">Bouaké</option>
+                                <option value="sanpedro">San Pedro</option>
+                            </select>
+                        </div>
+                        
+                        <div class="filter-buttons">
+                            <button class="filter-btn" id="compareButton">Comparer</button>
+                        </div>
+                    </div>
+                    
+                    <div class="comparison-results" id="comparisonResults">
+                        <!-- Les résultats de comparaison seront générés dynamiquement -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Section À propos -->
+        <section id="apropos">
+            <h2 class="section-title">À propos de PrixVert</h2>
+            <div class="about-section">
+                <div class="about-content">
+                    <h3>Notre Mission</h3>
+                    <p>PrixVert a été créé pour lutter contre la spéculation sur les produits agricoles en Côte d'Ivoire. Notre plateforme offre une transparence totale sur les prix du marché, permettant aux producteurs et aux consommateurs de prendre des décisions éclairées.</p>
+                    
+                    <h3>Comment ça marche?</h3>
+                    <p>Nous collectons quotidiennement les prix des principaux marchés ivoiriens et les affichons sur notre plateforme. Les utilisateurs peuvent comparer les prix entre différentes régions et suivre les tendances du marché.</p>
+                    
+                    <h3>Nos Objectifs</h3>
+                    <ul class="objectives-list">
+                        <li><i class="fas fa-check-circle"></i> Réduire la spéculation sur les produits agricoles</li>
+                        <li><i class="fas fa-check-circle"></i> Améliorer la transparence des prix</li>
+                        <li><i class="fas fa-check-circle"></i> Soutenir les producteurs locaux</li>
+                        <li><i class="fas fa-check-circle"></i> Protéger les consommateurs</li>
+                        <li><i class="fas fa-check-circle"></i> Contribuer à la sécurité alimentaire</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>PrixVert</h3>
+                    <p>Notre mission est de lutter contre la spéculation des produits agricoles en Côte d'Ivoire en offrant un accès transparent aux prix du marché.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Liens rapides</h3>
+                    <ul class="footer-links">
+                        <li><a href="#accueil">Accueil</a></li>
+                        <li><a href="#prix">Prix du marché</a></li>
+                        <li><a href="#comparer">Comparer les prix</a></li>
+                        <li><a href="#apropos">À propos</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contactez-nous</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Abidjan, Plateau, Côte d'Ivoire</p>
+                    <p><i class="fas fa-phone"></i> +225 27 22 44 55 66</p>
+                    <p><i class="fas fa-envelope"></i> contact@prixvert.ci</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 PrixVert - Marché Agricole Ivoirien. Tous droits réservés.</p>
+                <p>Données mises à jour quotidiennement par le Ministère de l'Agriculture et du Développement Rural.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
